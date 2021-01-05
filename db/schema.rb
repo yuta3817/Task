@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_01_02_163458) do
 
   create_table "cards", force: :cascade do |t|
+    t.date "date", null: false
     t.integer "list_id", null: false
     t.string "title", limit: 255, null: false
     t.text "memo", limit: 1000, null: false
@@ -22,13 +23,12 @@ ActiveRecord::Schema.define(version: 2021_01_02_163458) do
   end
 
   create_table "lists", force: :cascade do |t|
-    t.integer "user_id", null: false
     t.string "title", limit: 255, null: false
     t.text "memo", limit: 1000
-    t.integer "list_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["list_id"], name: "index_lists_on_list_id"
+    t.index ["user_id"], name: "index_lists_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,5 +44,6 @@ ActiveRecord::Schema.define(version: 2021_01_02_163458) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-
+  add_foreign_key "cards", "lists"
+  add_foreign_key "lists", "users"
 end
