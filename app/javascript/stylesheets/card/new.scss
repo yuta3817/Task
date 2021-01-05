@@ -2,10 +2,7 @@
   .cardnewForm {
     max-width: 500px;
     margin: 70px auto 0;
-    &_date {
-      margin-bottom: 30px;
-    }
-    &_title {
+    &_date, &_title {
       margin-bottom: 30px;
     }
   }
