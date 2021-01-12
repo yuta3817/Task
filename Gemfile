@@ -50,14 +50,11 @@ group :test do
   gem 'webdrivers'
 end
 
-<<<<<<< Updated upstream
-=======
 group :production do
   gem 'pg', '0.20.0'
   gem 'unicorn', '5.4.1'
 end
 
->>>>>>> Stashed changes
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
