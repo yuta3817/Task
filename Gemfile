@@ -59,3 +59,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'rails-i18n'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
