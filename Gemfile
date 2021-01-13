@@ -21,6 +21,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'sqlite3'
 end
 
 group :development do
@@ -36,6 +37,14 @@ group :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
 end
+
+group :production do
+  gem 'pg', '0.20.0'
+end
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'devise'
+gem 'rails-i18n'
 
 group :production do
   gem 'pg'
