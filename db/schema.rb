@@ -12,11 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2021_01_02_163458) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "cards", force: :cascade do |t|
     t.date "date", null: false
-    t.integer "list_id", null: false
+    t.bigint "list_id", null: false
     t.string "title", limit: 255, null: false
-    t.text "memo", limit: 1000, null: false
+    t.text "memo", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["list_id"], name: "index_cards_on_list_id"
@@ -24,8 +27,8 @@ ActiveRecord::Schema.define(version: 2021_01_02_163458) do
 
   create_table "lists", force: :cascade do |t|
     t.string "title", limit: 255, null: false
-    t.text "memo", limit: 1000
-    t.integer "user_id", null: false
+    t.text "memo"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_lists_on_user_id"
