@@ -1,0 +1,11 @@
+{
+  "name": "TaskManager",
+  "description": "タスク管理アプリ",
+  "keywords": [
+    "app-cloud"
+  ],
+  "repository": "https://github.com/yuta3817/Task.git",
+  "addons": [
+    "heroku-postgresql"
+  ]
+}
